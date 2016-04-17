@@ -4,10 +4,11 @@
 
 # Die folgende Variable speichert den Pfad zum Repository um das es geht.
 #GIT_REPO=https://spamtybot:uDgmVl57UnWtLNl@git.spamty.eu/spamty/blog.git
-GIT_REPO=/home/philr/gogs-repositories/spamty/spamty-api.git
+#GIT_REPO=/home/philr/gogs-repositories/spamty/spamty-api.git
+GIT_REPO=https://spamty-bot:AzzBqm49ms3NP9BB8@bitbucket.org/spamty/api.git
 
 # Die folgende Variable speichert den Pfad zum Webroot
-PUBLIC_WWW=/var/www/virtual/philr/api.spamty.eu
+PUBLIC_WWW=/var/www/api.spamty.eu
 
 # Webroot löschen
 rm -rf $PUBLIC_WWW
