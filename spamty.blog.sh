@@ -16,6 +16,7 @@ PUBLIC_WWW=/var/www/blog.spamty.eu
 
 # Mit "git clone" wird Dein Repository in das tmp-Verzeichnis geklont
 git clone $GIT_REPO $TMP_GIT_CLONE
+printf "Cloning files with git in /tmp \n"
 
 # Dein persönliches .bash_profile wird aktiviert damit der
 # Jekyll-Befehl benutzt werden kann.
@@ -24,8 +25,10 @@ git clone $GIT_REPO $TMP_GIT_CLONE
 # Jekyll generiert die Seite aus dem tmp-Verzeichnis heraus
 # in den Webroot hinein.
 jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
+printf "Jekyll build \n"
 
 # Das tmp-Verzeichnis wird gelöscht und das Shell-Programm beendet.
 rm -Rf $TMP_GIT_CLONE
+printf "Deleting /tmp \n"
 
 exit

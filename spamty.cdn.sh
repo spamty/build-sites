@@ -16,6 +16,7 @@ printf "Delete %s \n" "$PUBLIC_WWW"
 
 # Mit "git clone" wird Dein Repository in das Webroot geklont
 git clone $GIT_REPO $PUBLIC_WWW
+printf "Cloning files with git in webroot \n"
 
 # Verzeichnis wechseln
 cd $PUBLIC_WWW
