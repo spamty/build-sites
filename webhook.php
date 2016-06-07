@@ -1,7 +1,5 @@
 <?php
 
-echo "test";
-
 print_r("HTTP_X_EVENT_KEY ".$_SERVER['HTTP_X_EVENT_KEY']."   ");
 print_r("HTTP_X_REQUEST_UUID ".$_SERVER['HTTP_X_REQUEST_UUID']."   ");
 print_r("HTTP_X_ATTEMPT_NUMBER ".$_SERVER['HTTP_X_ATTEMPT_NUMBER']."   ");
