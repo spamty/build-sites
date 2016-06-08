@@ -17,11 +17,19 @@ Create executable (`chmod a+x`) script to clone git repository from bitbucket an
 * https://gist.github.com/philipp-r/a07009762dea99929784 (My modification to work with current Jekyll version)
 * http://jekyllrb.com/docs/usage/ (Jekyll docs)
 
-## Git Hook
+## Deploy
 
-**The Git hooks do only work if we have an own git server (gogs) but not with bitbucket!**
+### Webhooks
 
-**Maybe we can/should use webhooks for this. See issue #5 in bitbucket.**
+Bitbucket calls PHP script on Server. This script executes a command in shell to deploy the site.
+
+```
+shell_exec("/var/build-sites/spamty.website.sh");
+```
+
+### Git Hook
+
+The Git hooks do only work if we have an own git server (gogs) but not with bitbucket!
 
 This script (see section above) has to be called automatically everytime a push is send to the repository.
 
@@ -38,8 +46,6 @@ This will be triggered when the repository is updated and deploys the site to we
 * http://githooks.com
 * https://wiki.ubuntuusers.de/ln/ (Symbolic links)
 
-## Deploy
-
-Since git hooks are not working (see section above) we need to deploy manually.
+### Deploy manually
 
 Call the build script on server eg: `./spamty.website.sh` 
