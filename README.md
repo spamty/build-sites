@@ -1,6 +1,6 @@
 # build-sites
 
-Automatically deploy software to our vServer.
+Automatically deploy software to our vServer. 
 
 ## Install Jekyll
 
