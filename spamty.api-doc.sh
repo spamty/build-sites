@@ -4,8 +4,7 @@
 
 # Die folgende Variable speichert den Pfad zum Repository um das es geht.
 #GIT_REPO=https://spamtybot:uDgmVl57UnWtLNl@git.spamty.eu/spamty/blog.git
-#GIT_REPO=/home/philr/gogs-repositories/spamty/api-doc.git
-GIT_REPO=https://spamty-bot:AzzBqm49ms3NP9BB8@bitbucket.org/spamty/api-doc.git
+GIT_REPO=/var/git/api-doc.git
 
 # Die folgende Variable speichert den Pfad zum tmp Ordner in dem dann der Jekyll
 # Befehl ausgeführt wird um die deine Seite in den Webroot zu befördern.
@@ -18,17 +17,23 @@ PUBLIC_WWW=/var/www/dev.spamty.eu
 git clone $GIT_REPO $TMP_GIT_CLONE
 printf "Cloning files with git in /tmp \n"
 
-# Dein persönliches .bash_profile wird aktiviert damit der
-# Jekyll-Befehl benutzt werden kann.
-# . /home/philr/.bash_profile
-
 # Jekyll generiert die Seite aus dem tmp-Verzeichnis heraus
 # in den Webroot hinein.
 jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
 printf "Jekyll build \n"
 
-# Das tmp-Verzeichnis wird gelöscht und das Shell-Programm beendet.
+# Das tmp-Verzeichnis wird gelöscht
 rm -Rf $TMP_GIT_CLONE
 printf "Deleting /tmp \n"
 
+# File permissions for new files
+printf "Set new file permissions \n"
+# owner is git
+# Group is web-dev
+chgrp -R web-dev $PUBLIC_WWW
+# Permissions rwx rwx r-x
+chmod -R 775 $PUBLIC_WWW
+
+# Das Shell-Programm wird beendet
+printf "Done \n"
 exit

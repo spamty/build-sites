@@ -4,8 +4,7 @@
 
 # Die folgende Variable speichert den Pfad zum Repository um das es geht.
 #GIT_REPO=https://spamtybot:uDgmVl57UnWtLNl@git.spamty.eu/spamty/blog.git
-#GIT_REPO=/home/philr/gogs-repositories/spamty/spamty-api.git
-GIT_REPO=https://spamty-bot:AzzBqm49ms3NP9BB8@bitbucket.org/spamty/api.git
+GIT_REPO=/var/git/api.git
 
 # Die folgende Variable speichert den Pfad zum Webroot
 PUBLIC_WWW=/var/www/api.spamty.eu
@@ -27,5 +26,14 @@ cd $PUBLIC_WWW
 xargs -a DELETE_LIST.txt -d'\n' rm -rf
 printf "Delete files from DELETE_LIST.txt \n"
 
+# File permissions for new files
+printf "Set new file permissions \n"
+# owner is git
+# Group is web-dev
+chgrp -R web-dev $PUBLIC_WWW
+# Permissions rwx rwx r-x
+chmod -R 775 $PUBLIC_WWW
+
 # Das Shell-Programm wird beendet
+printf "Done \n"
 exit
