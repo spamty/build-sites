@@ -29,13 +29,13 @@ shell_exec("/var/build-sites/spamty.website.sh");
 
 ### Git Hook
 
-The Git hooks do only work if we have an own git server (gogs) but not with bitbucket!
+The Git hooks do only work if we have an own git server but not with bitbucket or GitHub (use Webhooks in this case)!
 
 This script (see section above) has to be called automatically everytime a push is send to the repository.
 
 We need a link in hooks folder with the name `post-receive` to the script:
 
-    ln -s ~/build-sites/SCRIPT.sh ~/gogs-repositories/USERNAME/REPOSITORY.git/hooks/post-receive
+    ln -s /var/build-sites/SCRIPT.sh /var/git/REPOSITORY.git/hooks/post-receive
 
 This will be triggered when the repository is updated and deploys the site to web directory.
 
