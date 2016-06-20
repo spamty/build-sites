@@ -56,6 +56,9 @@ chgrp -R web-dev $PUBLIC_WWW
 # Permissions rwx rwx r-x
 chmod -R 775 $PUBLIC_WWW
 
+# database has to be readable & writable for apache
+chmod 777 -R $PUBLIC_WWW/database
+
 # Das tmp-Verzeichnis wird gelöscht
 rm -Rf $TMP_GIT_CLONE
 printf "Deleting /tmp \n"
