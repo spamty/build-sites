@@ -7,7 +7,7 @@ GIT_CLONE_DEST=/var/git/blog.git
 
 # Fetch (http://stackoverflow.com/questions/3382679/git-how-do-i-update-my-bare-repo#comment15318906_3382703)
 cd $GIT_CLONE_DEST
-git fetch -q $GIT_REPO gh-pages:gh-pages
+git fetch $GIT_REPO gh-pages:gh-pages
 
 # File permissions for new files
 printf "Set new owner and group \n"
