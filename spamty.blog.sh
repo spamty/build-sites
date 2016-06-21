@@ -5,13 +5,9 @@ GIT_REPO=https://github.com/Spamty/blog.git
 # Clone destination
 GIT_CLONE_DEST=/var/git/blog.git
 
-# Remove destination
-printf "Deleting $GIT_CLONE_DEST \n"
-rm -rf $GIT_CLONE_DEST
-
-# Clone
-printf "Cloning files with git in $GIT_CLONE_DEST \n"
-git clone --bare $GIT_REPO $GIT_CLONE_DEST
+# Fetch (http://stackoverflow.com/questions/3382679/git-how-do-i-update-my-bare-repo#comment15318906_3382703)
+cd $GIT_CLONE_DEST
+git fetch -q $GIT_REPO gh-pages:gh-pages
 
 # File permissions for new files
 printf "Set new owner and group \n"
