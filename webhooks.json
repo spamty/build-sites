@@ -1,0 +1,33 @@
+[
+  {
+    "id": "deploy-bumpy-booby",
+    "execute-command": "/var/build-sites/bumpy-booby.sh",
+    "command-working-directory": "/var/build-sites"
+  },
+  {
+    "id": "deploy-api",
+    "execute-command": "/var/build-sites/spamty.api.sh",
+    "command-working-directory": "/var/build-sites"
+  },
+  {
+    "id": "deploy-api-doc",
+    "execute-command": "/var/build-sites/spamty.api.sh",
+    "command-working-directory": "/var/build-sites"
+  },
+  {
+    "id": "deploy-blog",
+    "execute-command": "/var/build-sites/spamty.blog.sh",
+    "command-working-directory": "/var/build-sites"
+  },
+  {
+    "id": "deploy-cdn",
+    "execute-command": "/var/build-sites/spamty.cdn.sh",
+    "command-working-directory": "/var/build-sites"
+  },
+  {
+    "id": "deploy-website",
+    "execute-command": "/var/build-sites/spamty.website.sh",
+    "command-working-directory": "/var/build-sites"
+  }
+]
+
