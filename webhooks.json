@@ -2,32 +2,125 @@
   {
     "id": "deploy-bumpy-booby",
     "execute-command": "/var/build-sites/bumpy-booby.sh",
-    "command-working-directory": "/var/build-sites"
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy Bumpy Booby",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "fYhJAh2e7xSqQyqLOl5iqLTX",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
   },
   {
     "id": "deploy-api",
     "execute-command": "/var/build-sites/spamty.api.sh",
-    "command-working-directory": "/var/build-sites"
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy API",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "hvYodYIqswb0XVFtulJxFjfO",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
   },
   {
     "id": "deploy-api-doc",
-    "execute-command": "/var/build-sites/spamty.api.sh",
-    "command-working-directory": "/var/build-sites"
+    "execute-command": "/var/build-sites/spamty.api-doc.sh",
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy API documentation",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "krAIxeCm1DKPrPCF0Hy2ohPO",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
   },
   {
     "id": "deploy-blog",
     "execute-command": "/var/build-sites/spamty.blog.sh",
-    "command-working-directory": "/var/build-sites"
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy Blog",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "fsIH6A3XJmCHWV86SHNSmJwv",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
   },
   {
     "id": "deploy-cdn",
     "execute-command": "/var/build-sites/spamty.cdn.sh",
-    "command-working-directory": "/var/build-sites"
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy CDN",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "1aic1iDSI432ObbiDAb1adf843dGG2ssb",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
   },
+
+
+
+
   {
     "id": "deploy-website",
     "execute-command": "/var/build-sites/spamty.website.sh",
-    "command-working-directory": "/var/build-sites"
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Deploy Website",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "PR8wEm2vNyDTRK0TdlUREDGp",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
   }
 ]
 

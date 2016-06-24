@@ -1,19 +1,22 @@
 #!/bin/sh
 
-# GitHub repository to clone
-GIT_REPO=https://github.com/Spamty/blog.git
-# Clone destination
-GIT_CLONE_DEST=/var/git/blog.git
+# GitHub repository
+GIT_REPO=git@github.com:philipp-r/spamty-blog.git
+# Lokal git repo
+GIT_REPO_LOKAL=/var/git/blog.git
 
-# Fetch (http://stackoverflow.com/questions/3382679/git-how-do-i-update-my-bare-repo#comment15318906_3382703)
-cd $GIT_CLONE_DEST
-git fetch $GIT_REPO gh-pages:gh-pages
+# path to webroot
+# PUBLIC_WWW=/var/www/blog.spamty.eu
 
-# File permissions for new files
-printf "Set new owner and group \n"
-# owner & group is git
-chown git:git $GIT_CLONE_DEST -R
+
+# deploy website
+# NOT required because hosted with GitHub Pages
+# ./deploy-web.sh $GIT_REPO $PUBLIC_WWW
+
+# fetch in lokal git repo
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+
 
 # Das Shell-Programm wird beendet
-printf "Done \n"
+printf "End \n"
 exit
