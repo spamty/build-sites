@@ -2,29 +2,65 @@
 
 Automatically deploy software to our vServer. 
 
-## Install Jekyll
+## Scripts
 
-Jekyll is required on vServer for some websites.
+Create executable (`chmod a+x`) script which calls `git-fetch.sh` or `deploy-web.sh`.
 
-* <http://lc3dyr.de/blog/2012/07/22/Jekyll-auf-Uberspace/>
-* <http://www.wittistribune.com/jekyll-auf-uberspace-mit-git>
+### git-fetch.sh
 
-## Deploy sites
+The script `git-fetch.sh` fetches all new commits from GitHub to our own git server.
 
-Create executable (`chmod a+x`) script to clone git repository from bitbucket and build site (with Jekyll).
+Call this script with the GitHub repository and the path to the local repository. Example: `git-fetch.sh git@github.com:USERNAME/REPOSITORY.git /var/git/REPOSITORY.git`
 
-* <http://oldarticles.kahlil.co/2011/07/24/uberkyll/> (Original script)
-* <https://gist.github.com/philipp-r/a07009762dea99929784> (My modification to work with current Jekyll version)
-* <http://jekyllrb.com/docs/usage/> (Jekyll docs)
+### deploy-web.sh
+
+The script `deploy-web.sh` clones from GitHub into the webroot directory.
+
+Call this script with the GitHub repository and the website directory. Example: `deploy-web.sh git@github.com:USERNAME/REPOSITORY.git /var/www/WEBSITE`
+
 
 ## Deploy
 
 ### Webhooks
 
-Bitbucket calls PHP script on Server. This script executes a command in shell to deploy the site.
+The software webhooks <https://github.com/adnanh/webhook> allows us to create HTTP endpoints (hooks) on the server, which can be used to execute configured commands.
+
+#### Configuration
+
+The hooks are defined in *webhooks.json* file. Example:
 
 ```
-shell_exec("/var/build-sites/spamty.website.sh");
+[
+  {
+    "id": "HOOK_NAME",
+    "execute-command": "/var/build-sites/SCRIPT.sh",
+    "command-working-directory": "/var/build-sites",
+    "response-message": "Hook running",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "XXXXXXXXX",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+  }
+]
+```
+
+The "secret" can be defined in GitHub (*Webhooks / Add webhook / Secret*) to validate the request.
+
+#### Running
+
+The software has to run in background. We change the URL prefix (`-urlprefix` option) and port (`-port` option).
+
+```
+nohup /root/go/bin/webhook -hooks webhooks.json -verbose -urlprefix webhooks -port 9900 -hotreload >/var/log/git-webhooks/output.log 2>/var/log/git-webhooks/error.log
 ```
 
 ### Git Hook
@@ -38,8 +74,7 @@ We need a link in hooks folder with the name `post-receive` to the script:
     ln -s /var/build-sites/SCRIPT.sh /var/git/REPOSITORY.git/hooks/post-receive
 
 This will be triggered when the repository is updated and deploys the site to web directory.
-
->The post-receive hook runs after the entire process is completed and can be used to update other services or notify users.
+The post-receive hook runs after the entire process is completed and can be used to update other services or notify users.
 
 * <https://git-scm.com/book/uz/v2/Customizing-Git-Git-Hooks> (Git Hooks)
 * <https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks>
