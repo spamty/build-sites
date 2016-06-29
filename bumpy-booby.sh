@@ -47,7 +47,7 @@ printf "Deleting /tmp \n"
 
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
 
 
 # Das Shell-Programm wird beendet
