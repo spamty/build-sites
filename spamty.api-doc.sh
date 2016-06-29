@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # GitHub repository
-GIT_REPO=git@github.com:philipp-r/spamty-api-doc.git
+GIT_REPO=git@github.com:Spamty/api-docs.git
 # Lokal git repo
 GIT_REPO_LOKAL=/var/git/api-doc.git
 
