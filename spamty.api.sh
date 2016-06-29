@@ -13,7 +13,7 @@ PUBLIC_WWW=/var/www/api.spamty.eu
 ./deploy-web.sh $GIT_REPO $PUBLIC_WWW
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
 
 
 # Das Shell-Programm wird beendet

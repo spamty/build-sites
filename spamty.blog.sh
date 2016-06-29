@@ -14,7 +14,7 @@ GIT_REPO_LOKAL=/var/git/blog.git
 # ./deploy-web.sh $GIT_REPO $PUBLIC_WWW
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL gh-pages:gh-pages
 
 
 # Das Shell-Programm wird beendet

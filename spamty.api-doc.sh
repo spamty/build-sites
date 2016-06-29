@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # GitHub repository
-GIT_REPO=git@github.com:philipp-r/spamty-api-doc.git
+GIT_REPO=git@github.com:Spamty/api-docs.git
 # Lokal git repo
 GIT_REPO_LOKAL=/var/git/api-doc.git
 
@@ -14,7 +14,7 @@ GIT_REPO_LOKAL=/var/git/api-doc.git
 # ./deploy-web.sh $GIT_REPO $PUBLIC_WWW
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL gh-pages:gh-pages
 
 
 # Das Shell-Programm wird beendet
