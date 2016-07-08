@@ -60,7 +60,7 @@ The "secret" can be defined in GitHub (*Webhooks / Add webhook / Secret*) to val
 The software has to run in background. We change the URL prefix (`-urlprefix` option) and port (`-port` option).
 
 ```
-nohup /root/go/bin/webhook -hooks webhooks.json -verbose -urlprefix webhooks -port 9900 -hotreload >/var/log/git-webhooks/output.log 2>/var/log/git-webhooks/error.log
+nohup /root/go/bin/webhook -hooks webhooks.json -verbose -urlprefix webhooks -port 9900 -hotreload >/var/log/git-webhooks/output.log 2>/var/log/git-webhooks/error.log &
 ```
 
 ### Git Hook
