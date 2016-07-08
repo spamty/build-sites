@@ -37,10 +37,6 @@ cp $TMP_GIT_CLONE/.htpasswd $PUBLIC_WWW/.htpasswd
 printf "Permissions for database directory \n"
 chmod 777 -R $PUBLIC_WWW/database
 
-# Sync with AWS S3
-aws s3 sync $PUBLIC_WWW/public s3://bumpybooby/public --delete --acl public-read
-
-
 # Das tmp-Verzeichnis wird gelöscht
 rm -Rf $TMP_GIT_CLONE
 printf "Deleting /tmp \n"
