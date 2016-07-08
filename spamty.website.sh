@@ -12,6 +12,9 @@ PUBLIC_WWW=/var/www/spamty.eu
 # deploy website
 ./deploy-web.sh $GIT_REPO $PUBLIC_WWW
 
+# sync premium images with amazon S3
+aws s3 sync $PUBLIC_WWW/premium s3://spamty-premium --delete --acl public-read
+
 # fetch in lokal git repo
 ./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
 
