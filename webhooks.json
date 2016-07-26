@@ -1,7 +1,7 @@
 [
   {
     "id": "deploy-bumpy-booby",
-    "execute-command": "/var/build-sites/bumpy-booby.sh",
+    "execute-command": "/var/build-sites/spamty.bumpy-booby.sh",
     "command-working-directory": "/var/build-sites",
     "response-message": "Deploy Bumpy Booby",
     "trigger-rule":
