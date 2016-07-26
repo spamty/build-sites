@@ -8,9 +8,12 @@ GIT_REPO_LOKAL=/var/git/cdn.git
 # path to webroot
 PUBLIC_WWW=/var/www/cdn.spamty.eu
 
+# branch to deploy
+DEPLOY_BRANCH=master
+
 
 # deploy website
-./deploy-web.sh $GIT_REPO $PUBLIC_WWW
+./deploy-web.sh $GIT_REPO $PUBLIC_WWW $DEPLOY_BRANCH
 
 # Sync with AWS S3
 aws s3 sync $PUBLIC_WWW s3://spamty-cdn --delete --acl public-read

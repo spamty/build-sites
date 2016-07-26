@@ -11,6 +11,9 @@ PUBLIC_WWW=/var/www/bugtracker
 # tmp directory for backups
 TMP_GIT_CLONE=/tmp/build_bumpy-booby
 
+# branch to deploy
+DEPLOY_BRANCH="spamty"
+
 # make temporary directory (don't forget to delete it later)
 mkdir $TMP_GIT_CLONE
 # Backup /var/www/bugtracker/database
@@ -23,7 +26,7 @@ cp $PUBLIC_WWW/.htpasswd $TMP_GIT_CLONE/.htpasswd
 
 
 # deploy website
-./deploy-web.sh $GIT_REPO $PUBLIC_WWW
+./deploy-web.sh $GIT_REPO $PUBLIC_WWW $DEPLOY_BRANCH
 
 # Restore /var/www/bugtracker/database
 printf "Restore database \n"
@@ -44,6 +47,7 @@ printf "Deleting /tmp \n"
 
 # fetch in lokal git repo
 ./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL spamty:spamty
 
 
 # Das Shell-Programm wird beendet
