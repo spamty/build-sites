@@ -6,7 +6,7 @@ GIT_REPO=git@github.com:philipp-r/spamty-website.git
 GIT_REPO_LOKAL=/var/git/website.git
 
 # path to webroot
-PUBLIC_WWW=/var/www/spamty.eu
+PUBLIC_WWW=/home/spamty/www/spamty.eu
 
 # branch to deploy
 DEPLOY_BRANCH=master
@@ -19,7 +19,7 @@ DEPLOY_BRANCH=master
 aws s3 sync $PUBLIC_WWW/premium s3://spamty-premium --delete --acl public-read
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
 
 
 # Das Shell-Programm wird beendet

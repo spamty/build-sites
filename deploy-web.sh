@@ -1,12 +1,9 @@
 #!/bin/sh
 
-
 # GitHub repository
 GIT_REPO=$1
-
 # path to webroot
 PUBLIC_WWW=$2
-
 # branch
 DEPLOY_BRANCH=$3
 
@@ -30,11 +27,11 @@ xargs -a DELETE_LIST.txt -d'\n' rm -rf
 
 # File permissions for new files
 printf "Set new file permissions \n"
-# owner is git
-# Group is web-dev
-chgrp -R web-dev $PUBLIC_WWW
-# Permissions rwx rwx r-x
-chmod -R 775 $PUBLIC_WWW
+# owner is spamty
+# Group is www-data (apache)
+chgrp -R www-data $PUBLIC_WWW
+# Permissions rwx r-x ---
+chmod -R 750 $PUBLIC_WWW
 
 # Das Shell-Programm wird beendet
 printf "Done deploy-web.sh \n"

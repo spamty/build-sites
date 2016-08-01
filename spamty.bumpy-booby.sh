@@ -6,7 +6,7 @@ GIT_REPO=git@github.com:Spamty/Bumpy-Booby.git
 GIT_REPO_LOKAL=/var/git/Bumpy-Booby.git
 
 # path to webroot
-PUBLIC_WWW=/var/www/bugtracker
+PUBLIC_WWW=/home/spamty/www/bugs.spamty.eu
 
 # tmp directory for backups
 TMP_GIT_CLONE=/tmp/build_bumpy-booby
@@ -37,17 +37,18 @@ cp $TMP_GIT_CLONE/.htaccess $PUBLIC_WWW/.htaccess
 cp $TMP_GIT_CLONE/.htpasswd $PUBLIC_WWW/.htpasswd
 
 # database has to be readable & writable for apache
+# owner is spamty, Group is www-data (apache)
+# Permissions rwx rwx ---
 printf "Permissions for database directory \n"
-chmod 777 -R $PUBLIC_WWW/database
+chmod 770 -R $PUBLIC_WWW/database
 
 # Das tmp-Verzeichnis wird gelöscht
-rm -Rf $TMP_GIT_CLONE
-printf "Deleting /tmp \n"
+#rm -Rf $TMP_GIT_CLONE
+#printf "Deleting /tmp \n"
 
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL master:master
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL spamty:spamty
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
 
 
 # Das Shell-Programm wird beendet
