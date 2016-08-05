@@ -12,7 +12,7 @@ PUBLIC_WWW=/home/spamty/www/bugs.spamty.eu
 TMP_GIT_CLONE=/tmp/build_bumpy-booby
 
 # branch to deploy
-DEPLOY_BRANCH="spamty"
+DEPLOY_BRANCH="master"
 
 # make temporary directory (don't forget to delete it later)
 mkdir $TMP_GIT_CLONE
