@@ -10,13 +10,13 @@ Create executable (`chmod a+x`) script which calls `git-fetch.sh` or `deploy-web
 
 The script `git-fetch.sh` fetches all new commits from GitHub to our own git server.
 
-Call this script with the GitHub repository and the path to the local repository and branch. Example: `git-fetch.sh git@github.com:USERNAME/REPOSITORY.git /var/git/REPOSITORY.git master:master`
+Call this script with the GitHub repository and the path to the local repository and branch. Example: `git-fetch.sh git@github.com:USERNAME/REPOSITORY.git /var/git/REPOSITORY.git`
 
 ### deploy-web.sh
 
 The script `deploy-web.sh` clones from GitHub into the webroot directory.
 
-Call this script with the GitHub repository and the website directory. Example: `deploy-web.sh git@github.com:USERNAME/REPOSITORY.git /var/www/WEBSITE`
+Call this script with the GitHub repository and the website directory. Example: `deploy-web.sh git@github.com:USERNAME/REPOSITORY.git /var/www/WEBSITE deploy_branch`
 
 
 ## Deploy

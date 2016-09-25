@@ -4,19 +4,19 @@
 GIT_REPO=$1
 # Lokal git repo
 GIT_REPO_LOKAL=$2
-# branch
-GIT_BRANCH=$3
-
 
 # Fetch (http://stackoverflow.com/questions/3382679/git-how-do-i-update-my-bare-repo#comment15318906_3382703)
 printf "Fetch from git repo \n"
 cd $GIT_REPO_LOKAL
-git fetch $GIT_REPO $GIT_BRANCH
+git fetch $GIT_REPO
 
 # File permissions for new files
-printf "Set new owner and group \n"
-# owner & group is git
-chown git:git $GIT_REPO_LOKAL -R
+printf "Set new group \n"
+# owner is spamty
+# group is git
+chgrp -R git $GIT_REPO_LOKAL
+# Permissions rwx rwx ---
+chmod -R 770 $GIT_REPO_LOKAL
 
 # Das Shell-Programm wird beendet
 printf "Done git-fetch.sh \n"

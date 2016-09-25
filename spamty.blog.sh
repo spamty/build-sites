@@ -7,7 +7,7 @@ GIT_REPO_LOKAL=/var/git/blog.git
 
 
 # fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL gh-pages:gh-pages
+./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
 
 
 # Das Shell-Programm wird beendet
