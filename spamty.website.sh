@@ -5,6 +5,11 @@ GIT_REPO=git@github.com:philipp-r/spamty-website.git
 # Lokal git repo
 GIT_REPO_LOKAL=/var/git/website.git
 
+# GitHub wiki
+GIT_REPO_WIKI=git@github.com:philipp-r/spamty-website.wiki.git
+# Lokal git repo for wiki
+GIT_REPO_WIKI_LOKAL=/var/git/website.wiki.git
+
 # path to webroot
 PUBLIC_WWW=/home/spamty/www/spamty.eu
 
@@ -20,6 +25,9 @@ aws s3 sync $PUBLIC_WWW/premium s3://spamty-premium --delete --acl public-read
 
 # fetch in lokal git repo
 ./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
+
+# fetch wiki
+./git-fetch.sh $GIT_REPO_WIKI $GIT_REPO_WIKI_LOKAL
 
 
 # Das Shell-Programm wird beendet
