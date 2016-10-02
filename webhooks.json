@@ -1,28 +1,8 @@
 [
   {
-    "id": "deploy-bumpy-booby",
-    "execute-command": "/var/build-sites/spamty.bumpy-booby.sh",
-    "command-working-directory": "/var/build-sites",
-    "response-message": "Deploy Bumpy Booby",
-    "trigger-rule":
-    {
-          "match":
-          {
-            "type": "payload-hash-sha1",
-            "secret": "fYhJAh2e7xSqQyqLOl5iqLTX",
-            "parameter":
-            {
-              "source": "header",
-              "name": "X-Hub-Signature"
-            }
-          }
-    }
-
-  },
-  {
     "id": "deploy-api",
-    "execute-command": "/var/build-sites/spamty.api.sh",
-    "command-working-directory": "/var/build-sites",
+    "execute-command": "/home/spamty/build-sites/spamty.api.sh",
+    "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy API",
     "trigger-rule":
     {
@@ -40,9 +20,9 @@
 
   },
   {
-    "id": "deploy-api-doc",
-    "execute-command": "/var/build-sites/spamty.api-doc.sh",
-    "command-working-directory": "/var/build-sites",
+    "id": "deploy-api-docs",
+    "execute-command": "/home/spamty/build-sites/spamty.api-doc.sh",
+    "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy API documentation",
     "trigger-rule":
     {
@@ -61,8 +41,8 @@
   },
   {
     "id": "deploy-blog",
-    "execute-command": "/var/build-sites/spamty.blog.sh",
-    "command-working-directory": "/var/build-sites",
+    "execute-command": "/home/spamty/build-sites/spamty.blog.sh",
+    "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy Blog",
     "trigger-rule":
     {
@@ -81,8 +61,8 @@
   },
   {
     "id": "deploy-cdn",
-    "execute-command": "/var/build-sites/spamty.cdn.sh",
-    "command-working-directory": "/var/build-sites",
+    "execute-command": "/home/spamty/build-sites/spamty.cdn.sh",
+    "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy CDN",
     "trigger-rule":
     {
@@ -104,8 +84,8 @@
 
   {
     "id": "deploy-website",
-    "execute-command": "/var/build-sites/spamty.website.sh",
-    "command-working-directory": "/var/build-sites",
+    "execute-command": "/home/spamty/build-sites/spamty.website.sh",
+    "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy Website",
     "trigger-rule":
     {
@@ -121,6 +101,27 @@
           }
     }
 
-  }
-]
+  },
+  {
+    "id": "deploy-website-tor",
+    "execute-command": "/home/spamty/build-sites/spamty.tor.sh",
+    "command-working-directory": "/home/spamty/build-sites",
+    "response-message": "Deploy Tor Website",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "PR8wEm2vNyDTRK0TdlUREDGp",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
 
+  }
+
+
+]
