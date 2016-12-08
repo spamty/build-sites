@@ -11,16 +11,11 @@ PUBLIC_WWW=/home/spamty/www/spamty.eu
 # branch to deploy
 DEPLOY_BRANCH=master
 
-
 # deploy website
 ./deploy-web.sh $GIT_REPO $PUBLIC_WWW $DEPLOY_BRANCH
 
-# sync premium images with amazon S3
-aws s3 sync $PUBLIC_WWW/premium s3://spamty-premium --delete --acl public-read
-
 # fetch in lokal git repo
 ./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
-
 
 # Das Shell-Programm wird beendet
 printf "End \n"
