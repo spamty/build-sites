@@ -3,12 +3,12 @@
 # GitHub repository
 GIT_REPO=git@github.com:philipp-r/spamty-website.git
 # Lokal git repo
-GIT_REPO_LOKAL=/var/git/website.git
+GIT_REPO_LOKAL=/home/spamty/git/website.git
 
 # GitHub wiki
 GIT_REPO_WIKI=git@github.com:philipp-r/spamty-website.wiki.git
 # Lokal git repo for wiki
-GIT_REPO_WIKI_LOKAL=/var/git/website.wiki.git
+GIT_REPO_WIKI_LOKAL=/home/spamty/git/website.wiki.git
 
 # path to webroot
 PUBLIC_WWW=/home/spamty/www/spamty.eu

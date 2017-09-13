@@ -12,9 +12,7 @@ git fetch $GIT_REPO
 
 # File permissions for new files
 printf "Set new group \n"
-# owner is spamty
-# group is git
-chgrp -R git $GIT_REPO_LOKAL
+# owner and group is spamty
 # Permissions rwx rwx ---
 chmod -R 770 $GIT_REPO_LOKAL
 
