@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # GitHub repository
-GIT_REPO=git@github.com:Spamty/blog.wiki.git
+GIT_REPO=git@github.com:Spamty/blog.git
 # Lokal git repo
 GIT_REPO_LOKAL=/home/spamty/git/blog.git
 
