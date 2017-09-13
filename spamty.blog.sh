@@ -3,12 +3,12 @@
 # GitHub repository
 GIT_REPO=git@github.com:Spamty/blog.wiki.git
 # Lokal git repo
-GIT_REPO_LOKAL=/var/git/blog.git
+GIT_REPO_LOKAL=/home/spamty/git/blog.git
 
 # GitHub wiki
 GIT_REPO_WIKI=git@github.com:Spamty/blog.wiki.git
 # Lokal git repo for wiki
-GIT_REPO_WIKI_LOKAL=/var/git/blog.wiki.git
+GIT_REPO_WIKI_LOKAL=/home/spamty/git/blog.wiki.git
 
 
 # fetch in lokal git repo

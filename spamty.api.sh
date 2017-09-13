@@ -3,7 +3,7 @@
 # GitHub repository
 GIT_REPO=git@github.com:philipp-r/spamty-api.git
 # Lokal git repo
-GIT_REPO_LOKAL=/var/git/api.git
+GIT_REPO_LOKAL=/home/spamty/git/api.git
 
 # path to webroot
 PUBLIC_WWW=/home/spamty/www/api.spamty.eu
