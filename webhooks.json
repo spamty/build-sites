@@ -60,53 +60,10 @@
 
   },
   {
-    "id": "deploy-cdn",
-    "execute-command": "/home/spamty/build-sites/spamty.cdn.sh",
-    "command-working-directory": "/home/spamty/build-sites",
-    "response-message": "Deploy CDN",
-    "trigger-rule":
-    {
-          "match":
-          {
-            "type": "payload-hash-sha1",
-            "secret": "1aic1iDSI432ObbiDAb1adf843dGG2ssb",
-            "parameter":
-            {
-              "source": "header",
-              "name": "X-Hub-Signature"
-            }
-          }
-    }
-  },
-
-
-
-
-  {
     "id": "deploy-website",
     "execute-command": "/home/spamty/build-sites/spamty.website.sh",
     "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy Website",
-    "trigger-rule":
-    {
-          "match":
-          {
-            "type": "payload-hash-sha1",
-            "secret": "PR8wEm2vNyDTRK0TdlUREDGp",
-            "parameter":
-            {
-              "source": "header",
-              "name": "X-Hub-Signature"
-            }
-          }
-    }
-
-  },
-  {
-    "id": "deploy-website-tor",
-    "execute-command": "/home/spamty/build-sites/spamty.tor.sh",
-    "command-working-directory": "/home/spamty/build-sites",
-    "response-message": "Deploy Tor Website",
     "trigger-rule":
     {
           "match":
