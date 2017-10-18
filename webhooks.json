@@ -1,7 +1,7 @@
 [
   {
     "id": "deploy-api",
-    "execute-command": "/home/spamty/build-sites/spamty.api.sh",
+    "execute-command": "./spamty.api.sh",
     "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy API",
     "trigger-rule":
@@ -9,7 +9,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "hvYodYIqswb0XVFtulJxFjfO",
+            "secret": "tPuBRtnHwcGLtgzpJQ3bgRhBa5",
             "parameter":
             {
               "source": "header",
@@ -21,7 +21,7 @@
   },
   {
     "id": "deploy-api-docs",
-    "execute-command": "/home/spamty/build-sites/spamty.api-doc.sh",
+    "execute-command": "./spamty.api-docs.sh",
     "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy API documentation",
     "trigger-rule":
@@ -29,7 +29,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "krAIxeCm1DKPrPCF0Hy2ohPO",
+            "secret": "Ph6xW2n2mHULX2NXrnwsg53YdE",
             "parameter":
             {
               "source": "header",
@@ -41,7 +41,7 @@
   },
   {
     "id": "deploy-blog",
-    "execute-command": "/home/spamty/build-sites/spamty.blog.sh",
+    "execute-command": "./spamty.blog.sh",
     "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy Blog",
     "trigger-rule":
@@ -49,7 +49,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "fsIH6A3XJmCHWV86SHNSmJwv",
+            "secret": "MdPcMsaGwQykyadpL6Zm7MSAvu",
             "parameter":
             {
               "source": "header",
@@ -61,7 +61,7 @@
   },
   {
     "id": "deploy-website",
-    "execute-command": "/home/spamty/build-sites/spamty.website.sh",
+    "execute-command": "./spamty.website.sh",
     "command-working-directory": "/home/spamty/build-sites",
     "response-message": "Deploy Website",
     "trigger-rule":
@@ -69,7 +69,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "PR8wEm2vNyDTRK0TdlUREDGp",
+            "secret": "6cNUmU8RmXp7zkg2qAsdT9q84b",
             "parameter":
             {
               "source": "header",
