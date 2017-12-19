@@ -60,6 +60,26 @@
 
   },
   {
+    "id": "deploy-translations",
+    "execute-command": "./spamty.translate.sh",
+    "command-working-directory": "/home/spamty/build-sites",
+    "response-message": "Deploy Translations for website",
+    "trigger-rule":
+    {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "JZbIdablsuFzba642ppq7dba353lf",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+    }
+
+  },
+  {
     "id": "deploy-website",
     "execute-command": "./spamty.website.sh",
     "command-working-directory": "/home/spamty/build-sites",
