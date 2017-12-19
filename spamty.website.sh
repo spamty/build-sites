@@ -19,6 +19,9 @@ DEPLOY_BRANCH=master
 # deploy website
 ./deploy-web.sh $GIT_REPO $PUBLIC_WWW $DEPLOY_BRANCH
 
+# deploy translations (they are deleted from webroot)
+./spamty.translate.sh
+
 # fetch in lokal git repo
 ./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
 
