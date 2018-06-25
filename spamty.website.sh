@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # GitHub repository
-GIT_REPO=git@github.com:philipp-r/spamty-website.git
+GIT_REPO=git@bitbucket.org:spamty/website.git
 # Lokal git repo
 GIT_REPO_LOKAL=/home/spamty/git/website.git
 
 # GitHub wiki
-GIT_REPO_WIKI=git@github.com:philipp-r/spamty-website.wiki.git
+GIT_REPO_WIKI=git@bitbucket.org:spamty/website.git/wiki
 # Lokal git repo for wiki
 GIT_REPO_WIKI_LOKAL=/home/spamty/git/website.wiki.git
 
