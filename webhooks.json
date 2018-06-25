@@ -40,26 +40,6 @@
 
   },
   {
-    "id": "deploy-blog",
-    "execute-command": "./spamty.blog.sh",
-    "command-working-directory": "/home/spamty/build-sites",
-    "response-message": "Deploy Blog",
-    "trigger-rule":
-    {
-          "match":
-          {
-            "type": "payload-hash-sha1",
-            "secret": "MdPcMsaGwQykyadpL6Zm7MSAvu",
-            "parameter":
-            {
-              "source": "header",
-              "name": "X-Hub-Signature"
-            }
-          }
-    }
-
-  },
-  {
     "id": "deploy-translations",
     "execute-command": "./spamty.translate.sh",
     "command-working-directory": "/home/spamty/build-sites",

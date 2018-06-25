@@ -1,6 +1,6 @@
 # build-sites
 
-Automatically deploy software to our vServer. 
+Automatically deploy software to our vServer.
 
 ## Scripts
 
@@ -21,7 +21,14 @@ Call this script with the GitHub repository and the website directory. Example: 
 
 ## Deploy
 
+### Deploy manually
+
+Call the build script on server eg: `./spamty.website.sh`
+
+
 ### Webhooks
+
+*Webhooks are currently not working because now on bitbucket! Deploy manually!*
 
 The software webhooks <https://github.com/adnanh/webhook> allows us to create HTTP endpoints (hooks) on the server, which can be used to execute configured commands.
 
@@ -80,7 +87,3 @@ The post-receive hook runs after the entire process is completed and can be used
 * <https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks>
 * <http://githooks.com>
 * <https://wiki.ubuntuusers.de/ln/> (Symbolic links)
-
-### Deploy manually
-
-Call the build script on server eg: `./spamty.website.sh` 
