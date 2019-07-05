@@ -4,15 +4,17 @@ Automatically deploy software to our vServer.
 
 ## Scripts
 
-Create executable (`chmod a+x`) script which calls `git-fetch.sh` or `deploy-web.sh`.
+Create executable (`chmod a+x`) script which calls `deploy-web.sh`.
 
 ### git-fetch.sh
 
-The script `git-fetch.sh` fetches all new commits from GitHub to our own git server.
+Purpose: Download all files from Bitbucket to a local git repo.
 
-Call this script with the GitHub repository and the path to the local repository and branch. Example: `git-fetch.sh git@github.com:USERNAME/REPOSITORY.git /var/git/REPOSITORY.git`
+_This is now done with bitbucket pipelines! Add code here! And update documentation!_
 
 ### deploy-web.sh
+
+Purpose: Copy all files from bitbucket to local website directory (`/var/www`). 
 
 The script `deploy-web.sh` clones from GitHub into the webroot directory.
 
