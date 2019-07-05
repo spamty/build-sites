@@ -14,8 +14,6 @@ DEPLOY_BRANCH=master
 # deploy website
 ./deploy-web.sh $GIT_REPO $PUBLIC_WWW $DEPLOY_BRANCH
 
-# fetch in lokal git repo
-./git-fetch.sh $GIT_REPO $GIT_REPO_LOKAL
 
 # Das Shell-Programm wird beendet
 printf "End \n"
